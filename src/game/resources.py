@@ -16,6 +16,10 @@ pyglet.resource.reindex()
 player_image = pyglet.resource.image('player.png')
 center_image(player_image)
 
+engine_flame = pyglet.resource.image('engine_flame.png')
+engine_flame.anchor_x = engine_flame.width * 1.5
+engine_flame.anchor_y = engine_flame.height / 2
+
 bullet_image = pyglet.resource.image('bullet.png')
 center_image(bullet_image)
 
