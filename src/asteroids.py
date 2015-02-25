@@ -1,5 +1,5 @@
 import pyglet
-from game import resources, load, physicalobject
+from game import resources, load, physicalobject, player
 
 # Set the main game window
 game_window = pyglet.window.Window(800, 600)
@@ -13,7 +13,10 @@ level_label = pyglet.text.Label(text="Pyglet Asteroids", x=400, y=575, anchor_x=
 player_lives = load.player_lives(3, main_batch)
 
 # Set up the player
-player_ship = physicalobject.PhysicalObject(img=resources.player_image, x=400, y=300, batch=main_batch)
+player_ship = player.Player(x=400, y=300, batch=main_batch)
+
+# Let Pyglet know the player is an even handler
+game_window.push_handlers(player_ship)
 
 # Set up the asteroids
 asteroids = load.asteroids(3, player_ship.position, main_batch)
