@@ -16,7 +16,7 @@ player_lives = load.player_lives(3, main_batch)
 player_ship = player.Player(x=400, y=300, batch=main_batch)
 
 # Let Pyglet know the player is an even handler
-game_window.push_handlers(player_ship)
+game_window.push_handlers(player_ship.key_handler)
 
 # Set up the asteroids
 asteroids = load.asteroids(3, player_ship.position, main_batch)
